@@ -1,0 +1,382 @@
+<html>
+    <head>
+        <title>{Title}</title>
+        
+        <!--
+        
+        #002 - Boots
+        A simple Bootstrap tumblr theme I put together for my art blog. 
+        It was designed to be as plain as possible to emphasize the art, while still
+        maintaining the 2-column look of a "regular" blog. Theoretically, it should
+        also be responsive, but there's some funky things with the built-in tumblr
+        elements (video, audio) that don't immediately scale nicely with Bootstrap.
+        
+        I made it in like 4 hours so it's kinda bad and a lot of the styling is
+        hardcoded. Still, there's some flexibility with the links and FA icons
+        that might be interesting.
+        
+        Copyright (C) 2016 Kazi Toko (stokori.tumblr.com)
+
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <http://www.gnu.org/licenses/>.
+                        
+        
+        -->
+        
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+        <meta name="image:BackgroundImage" content=""/>
+        
+        <meta name="text:Link1" content=""/>
+        <meta name="text:Link1URL" content=""/>
+        <meta name="text:Link1FA" content=""/>
+        
+        <meta name="text:Link2" content=""/>
+        <meta name="text:Link2URL" content=""/>
+        <meta name="text:Link2FA" content=""/>
+        
+        <meta name="text:Link3" content=""/>
+        <meta name="text:Link3URL" content=""/>
+        <meta name="text:Link3FA" content=""/>
+        
+        <meta name="text:Link4" content=""/>
+        <meta name="text:Link4URL" content=""/>
+        <meta name="text:Link4FA" content=""/>
+        
+        <meta name="if:ShowLink1" content="0"/>
+        <meta name="if:ShowLink2" content="0"/>
+        <meta name="if:ShowLink3" content="0"/>
+        <meta name="if:ShowLink4" content="0"/>
+        
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Tillana&subset=latin-ext" rel="stylesheet">
+        
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <!--Font Awesome-->
+        <script src="https://use.fontawesome.com/e929ede2b8.js"></script>
+
+
+        <style>
+            
+            body {
+                background-color: #b1f3f8;
+                background-image: url("{image:BackgroundImage}");
+            }
+            
+            a {
+                color: #359A9E;
+            }
+            
+            strong {
+                
+            }
+            
+            
+            h1#title {
+                font-family: "Tillana", sans-serif;
+            }
+            
+            #title a {
+                text-decoration: none;
+                color: #388689;
+            }
+            
+            #sidebar {
+                text-align: center;
+                background-color: #ffffff;
+                border-radius: 10px;
+                padding: 3%;
+                margin: 10px;
+            }
+            
+            .post {
+                background-color: #ffffff;
+                border-radius: 10px;
+                padding: 3%;
+                margin: 10px;
+                max-width: 540px;
+            }
+            
+            .post img {
+                max-width: 100%;
+            }
+            
+            #pagination {
+                margin: 10px;
+                display: block;
+            }
+            
+            .nav-button {
+                background-color: #ADEDE2;
+                padding: 10px;
+                border-radius: 4px;
+                color: #388689;
+            }
+            
+            .nav-button:hover {
+                background-color: #388689;
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+            
+            .content.quote {
+                text-align: center;
+                margin: 3%;
+            }
+            
+            .info {
+                margin-bottom: 0px;
+            }
+            
+            .asker-avatar {
+                float: left;
+                margin: 5px;
+                border: 1px solid #74A4BC;
+            }
+            
+            .notes-container {
+                margin-top: 20px;
+            }
+            
+            .note {
+                list-style: none;
+            }
+            
+            .notes img {
+                margin: 5px;
+            }
+            
+            .links {
+                text-align: left;
+            }
+            
+            .links a {
+                color: #388689;
+                border-color: #388689;
+                background-color: #ADEDE2;
+            }
+            
+            .links a:hover {
+                background-color: #388689;
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+            
+            .links span {
+                position: relative;
+            }
+            
+            .portrait {
+                border: 1px solid #388689;
+                margin: 10px;
+            }
+            
+            #description {
+                margin-bottom: 10px;
+            }
+            
+            .tags {
+                border-bottom: 1px solid #487287;
+                padding-bottom: 5px;
+                margin-bottom: 5px;
+            }
+            
+            .info {
+                color: #2D5D7B;
+                background-color: #ACD7EC;
+            }
+            
+            .well {
+                color: #2D5D7B;
+                background-color: #ADEDE2;
+                border-color: #487287;
+            }
+            
+            .photo-container {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+            
+            blockquote {
+                font-size: 14px;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+     
+    <div class="container">
+        <div class="row">
+    
+        <div class="col-sm-4" id="sidebar">
+        <h1 id="title"><a href="{BlogURL}">{Title}</a></h1>
+
+        <img src="{PortraitURL-128}" class="img-rounded portrait" title="Blog Icon" />
+
+        {block:Description}
+            <div id="description">{Description}</div>
+        {/block:Description}
+        
+        
+        
+        <div class="links list-group">
+        
+        <a class="list-group-item" href="{BlogURL}"><span class="fa fa-home fa-fw fa-lg"></span> Home</a>
+        
+        <a class="list-group-item" href="/ask"><span class="fa fa-pencil-square-o fa-fw fa-lg"></span> Ask</a>
+        
+        <a class="list-group-item" href="/archive"><span class="fa fa-clock-o fa-fw fa-lg"></span> Archive</a>
+        
+        {block:IfShowLink1}<a class="list-group-item" href="{text:Link1URL}"><span class="fa {text:Link1FA} fa-fw fa-lg"></span> {text:Link1}</a>{/block:IfShowLink1}
+        {block:IfShowLink2}<a class="list-group-item" href="{text:Link2URL}"><span class="fa {text:Link2FA} fa-fw fa-lg"></span> {text:Link2}</a>{/block:IfShowLink2}
+        {block:IfShowLink3}<a class="list-group-item" href="{text:Link3URL}"><span class="fa {text:Link3FA} fa-fw fa-lg"></span> {text:Link3}</a>{/block:IfShowLink3}
+        {block:IfShowLink4}<a class="list-group-item" href="{text:Link4URL}"><span class="fa {text:Link4FA} fa-fw fa-lg"></span> {text:Link4}</a>{/block:IfShowLink4}
+        </div>
+        
+        <div id="pagination">
+        {block:PreviousPage}
+            <a href="{PreviousPage}" class="nav-button">&#171; Previous</a>
+        {/block:PreviousPage}{block:NextPage}
+            <a href="{NextPage}" class="nav-button">Next &#187;</a>
+        {/block:NextPage}
+        </div>
+        
+        </div>
+
+        <div class="col-sm-7">
+        <section id="posts">
+            {block:Posts}<article class="post">
+            
+                {block:Answer}
+                <article class="content ask clearfix">
+                <div class="question well clearfix">
+                <img class="asker-avatar img-rounded" src="{AskerPortraitURL-96}" alt="">{Asker} asked: <div class="asker-question">{Question}</div></div>
+            
+                {block:Answerer}
+                    <div class="answer"><div class="answerer-answer">{Answer}</div></div>
+                {/block:Answerer}
+            
+                <div class="replies">
+                    {Replies}
+                </div>
+                </article>
+            {/block:Answer}
+            
+                {block:Text}
+                    <article class="content text clearfix">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}{Body}
+                    </article>
+                {/block:Text}{block:Photo}
+                    <article class="content photo clearfix">
+                        <div class="photo-container"><a href="{permalink}"><img src="{PhotoURL-500}" alt="{PhotoAlt}" style="padding:3px;"/></a></div>
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Photo}{block:Panorama}
+                    <article class="content panorama clearfix">
+                        {LinkOpenTag}
+                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                        {LinkCloseTag}{block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Panorama}{block:Photoset}
+                    <article class="content photoset clearfix">
+                        <div class="photo-container">{Photoset-500}</div>{block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Photoset}{block:Quote}
+                    <article class="content quote">
+                        <h2>"{Quote}"</h2>
+
+                        {block:Source}
+                            <div class="source"> - {Source}</div>
+                        {/block:Source}
+                    </article>
+                {/block:Quote}{block:Link}
+                    <article class="content link clearfix">
+                        <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                    </article>
+                {/block:Link}{block:Chat}
+                    <article class="content chat clearfix">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}{Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    </article>
+                {/block:Chat}{block:Video}
+                    <article class="content video clearfix">
+                    {Video-500}{block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Video}{block:Audio}
+                    <article class="content audio clearfix">
+                        {AudioEmbed}{block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </article>
+                {/block:Audio}
+                
+                {block:Date}<div class="info well text-center">
+                    
+                    {block:HasTags}<div class="tags">{block:Tags} #<a href="{TagURL}">{Tag}</a> {/block:Tags}</div>{/block:HasTags}
+                    
+                   posted at {DayOfMonthWithZero}/{MonthNumberWithZero}/{Year} with <a href="{Permalink}">{NoteCountWithLabel}</a><br>
+                    {block:RebloggedFrom}reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                    	&#8226; 
+                   posted by <a href="{ReblogRootURL}">{ReblogRootName}</a>
+                    {/block:RebloggedFrom}
+                    
+                    
+                </div>{/block:Date}
+                
+                {block:PostNotes}<div class="notes-container">{PostNotes-16}</div>{/block:PostNotes}
+                
+                </article>
+                {/block:Posts}
+                
+                
+                
+        </section>
+        </div>
+        </div>
+    
+    </div>
+    </body>
+</html>
