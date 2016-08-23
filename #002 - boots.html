@@ -12,7 +12,7 @@
         elements (video, audio) that don't immediately scale nicely with Bootstrap.
         
         I made it in like 4 hours so it's kinda bad and a lot of the styling is
-        hardcoded. Still, there's some flexibility with the links and FA icons
+        hardcoded. Still, there's some flexibility with the links and Font Awesome icons
         that might be interesting.
         
         Copyright (C) 2016 Kazi Toko (stokori.tumblr.com)
@@ -38,6 +38,25 @@
         {block:Description}
             <meta name="description" content="{MetaDescription}" />
         {/block:Description}
+        
+        <meta name="color:BackgroundColor" content="">
+        <meta name="color:LinkColor" content="">
+        <meta name="color:TitleColor" content="">
+        <meta name="color:SidebarColor" content="">
+        <meta name="color:PostColor" content="">
+        <meta name="color:NavBackgroundColor" content="">
+        <meta name="color:NavTextColor" content="">
+        <meta name="color:NavBackgroundHoverColor" content="">
+        <meta name="color:NavTextHoverColor" content="">
+        <meta name="color:AvatarBorderColor" content="">
+        <meta name="color:LinksTextColor" content="">
+        <meta name="color:LinksTextHoverColor" content="">
+        <meta name="color:LinksBackgroundColor" content="">
+        <meta name="color:LinksBackgroundHoverColor" content="">
+        <meta name="color:TagsBorderColor" content="">
+        <meta name="color:InfoTextColor" content="">
+        <meta name="color:InfoBackgroundColor" content="">
+        <meta name="color:InfoBorderColor" content="">
         
         <meta name="image:BackgroundImage" content=""/>
         
@@ -76,12 +95,12 @@
         <style>
             
             body {
-                background-color: #b1f3f8;
+                background-color: {color:BackgroundColor};
                 background-image: url("{image:BackgroundImage}");
             }
             
             a {
-                color: #359A9E;
+                color: {color:LinkColor};
             }
             
             strong {
@@ -95,19 +114,19 @@
             
             #title a {
                 text-decoration: none;
-                color: #388689;
+                color: {color:TitleColor};
             }
             
             #sidebar {
                 text-align: center;
-                background-color: #ffffff;
+                background-color: {color:SidebarColor};
                 border-radius: 10px;
                 padding: 3%;
                 margin: 10px;
             }
             
             .post {
-                background-color: #ffffff;
+                background-color: {color:PostColor};
                 border-radius: 10px;
                 padding: 3%;
                 margin: 10px;
@@ -124,15 +143,15 @@
             }
             
             .nav-button {
-                background-color: #ADEDE2;
+                background-color: {color:NavBackgroundColor};
                 padding: 10px;
                 border-radius: 4px;
-                color: #388689;
+                color: {color:NavTextColor};
             }
             
             .nav-button:hover {
-                background-color: #388689;
-                color: #FFFFFF;
+                background-color: {color:NavBackgroundHoverColor};
+                color: {color:NavTextHoverColor};
                 text-decoration: none;
             }
             
@@ -148,7 +167,7 @@
             .asker-avatar {
                 float: left;
                 margin: 5px;
-                border: 1px solid #74A4BC;
+                border: 1px solid {color:AvatarBorderColor};
             }
             
             .notes-container {
@@ -168,14 +187,14 @@
             }
             
             .links a {
-                color: #388689;
-                border-color: #388689;
-                background-color: #ADEDE2;
+                color: {color:LinksTextColor};
+                border-color: {color:LinksBackgroundHoverColor};
+                background-color: {color:LinksBackgroundColor};
             }
             
             .links a:hover {
-                background-color: #388689;
-                color: #FFFFFF;
+                background-color: {color:LinksBackgroundHoverColor};
+                color: {color:LinksTextHoverColor};
                 text-decoration: none;
             }
             
@@ -184,7 +203,7 @@
             }
             
             .portrait {
-                border: 1px solid #388689;
+                border: 1px solid {color:AvatarBorderColor};
                 margin: 10px;
             }
             
@@ -193,20 +212,20 @@
             }
             
             .tags {
-                border-bottom: 1px solid #487287;
+                border-bottom: 1px solid {color:TagsBorderColor};
                 padding-bottom: 5px;
                 margin-bottom: 5px;
             }
             
             .info {
-                color: #2D5D7B;
-                background-color: #ACD7EC;
+                color: {color:InfoTextColor};
+                background-color: {color:InfoBackgroundColor};
             }
             
             .well {
-                color: #2D5D7B;
-                background-color: #ADEDE2;
-                border-color: #487287;
+                color: {color:InfoTextColor};
+                background-color: {color:InfoBackgroundColor};
+                border-color: {color:InfoBorderColor};
             }
             
             .photo-container {
